@@ -5,10 +5,10 @@ import time
 from locators_mod import *
 
 
-# # The syntax to run the script on Ubuntu OS
-# from selenium.webdriver.chrome.options import Options
-# chrome_options = Options()
-# chrome_options.add_argument("--remote-debugging-port=9515")
+# The syntax to run the script on Ubuntu OS
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_argument("--remote-debugging-port=9515")
 
 class Product:
     """Create Product class"""
@@ -84,7 +84,7 @@ catalog_locators_dic = {'1': backpack_loc,
 
 """Input number of product"""
 catalog_number = input()
-while catalog_number not in '123456':
+while catalog_number not in ['1', '2', '3', '4', '5', '6']:
     print('You input incorrect symbol. Please try again.(correct numbers from 1 to 6)')
     catalog_number = input()
 
@@ -97,11 +97,11 @@ try:
 
     # Open browser and go to the link
 
-    # The syntax to run the script on Windows OS
-    browser = webdriver.Chrome()
+    # # The syntax to run the script on Windows OS
+    # browser = webdriver.Chrome()
 
-    # # The syntax to run the script on Ubuntu OS
-    # browser = webdriver.Chrome(options=chrome_options)
+    # The syntax to run the script on Ubuntu OS
+    browser = webdriver.Chrome(options=chrome_options)
 
     browser.get(link)
     browser.implicitly_wait(5)
