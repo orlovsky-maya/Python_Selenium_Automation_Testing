@@ -25,4 +25,3 @@ class Login_page:
         # Find Login button on page and click it
         login_button = WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable((By.ID, 'login-button')))
         login_button.click()
-        # print(f'{login_name} is logged in')
